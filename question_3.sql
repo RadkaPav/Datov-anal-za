@@ -1,15 +1,15 @@
 --Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-CREATE TABLE prices_in_years AS
+CREATE OR REPLACE VIEW prices_in_years AS
 SELECT 
   year, 
   AVG(average_prices) AS average_price, 
   food 
-FROM mzdy_potraviny
+FROM wages_food
 GROUP BY year, food
 ORDER BY food, year;
 
-CREATE TABLE prices_increase AS
+CREATE OR REPLACE VIEW prices_increase AS
 SELECT
     year,
     food,
