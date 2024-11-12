@@ -2,4 +2,4 @@
 
 SELECT year, ROUND(AVG(average_wages),0), industry FROM wages_food
 GROUP BY industry, year
-ORDER BY industry, year
+ORDER BY industry, year;
